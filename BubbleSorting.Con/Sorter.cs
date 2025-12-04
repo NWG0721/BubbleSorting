@@ -8,6 +8,9 @@ namespace BubbleSorting.Con
 {
 	public class Sorter
 	{
+
+		#region Bubble sort
+
 		public List<int> BubbleSort(List<int> listOfNumbers)
 		{
 			int carryNumber = 0;
@@ -34,34 +37,41 @@ namespace BubbleSorting.Con
 			return listOfNumbers;
 		}
 
+		#endregion
 
-
-
+		#region Radix sort system
 
 		public List<string> RadixSort(List<string> listOfStrings)
 		{
 
-			// Coming soon
+			int listCount = listOfStrings.Count;
+			var maxLength = listOfStrings.Max(s => s.Length);
 
-
-			//List<char> secondChars = new List<char>();
-			//long carryNumber = 0;
-			//int biggetNumberLength = int.MinValue;
-			//for (int i = 0; i < listOfStrings.Count; i++)
-			//{
-			//	biggetNumberLength = listOfStrings[i].ToString().Length > biggetNumberLength ? listOfStrings[i].ToString().Length : biggetNumberLength;
-			//}
-
-			//for (int i = biggetNumberLength - 1; i >= 0; i--)
-			//{
-
-			//	listOfStrings = listOfStrings
-			//		.OrderBy(s => i < s.Length ? s[i] : '0')
-			//		.ToList(); 
-			//}
+			for (int j = 0; j < listCount; j++)
+			{
+				for (int i = 0; i < maxLength; i++)
+				{
+					listOfStrings.OrderBy(s => i < s.Length ? s[i] : '0');
+				}
+			}
 
 			//return listOfStrings;
-			return null;
+			return listOfStrings;
 		}
+		public List<int> RadixSort(List<int> listOfNumbers)
+		{
+			int maxLength = listOfNumbers.Max();
+			int exp = 1;
+			while ((maxLength / exp) > 0)
+			{
+				listOfNumbers = listOfNumbers.OrderBy(n => (n / exp) % 10).ToList();
+				exp *= 10;
+			}
+			return listOfNumbers;
+		}
+
+		#endregion
+
+
 	}
 }
