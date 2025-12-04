@@ -12,10 +12,21 @@ namespace BubbleSorting.Con
 			var data = new List<int>();
 			Sorter sorter;
 
+			#region QuickSort
+			timers.Add(new Timer());
+			data = DataCreator.UniqueRandomNumbers(10000);
+			//DataCreator.Printer(data);
+			sorter = new Sorter();
+			//DataCreator.Printer(sorter.BubbleSort(data));
+			sorter.BubbleSort(data);
+			timers.Add(new Timer());
+			Timer.DataTableCreator(timers);
+			#endregion
+
 
 			#region RadixSort
 			timers.Add(new Timer());
-			data = DataCreator.UniqueRandomNumbers(100000);
+			data = DataCreator.UniqueRandomNumbers(10000);
 			//DataCreator.Printer(data);
 			sorter = new Sorter();
 			//DataCreator.Printer(sorter.RadixSort(data));
@@ -26,7 +37,7 @@ namespace BubbleSorting.Con
 
 			#region BubbleSort
 			timers.Add(new Timer());
-			data = DataCreator.UniqueRandomNumbers(100000);
+			data = DataCreator.UniqueRandomNumbers(10000);
 			//DataCreator.Printer(data);
 			sorter = new Sorter();
 			//DataCreator.Printer(sorter.BubbleSort(data));

@@ -72,6 +72,23 @@ namespace BubbleSorting.Con
 
 		#endregion
 
+		#region QuickSort
 
+		public List<int> QuickSort(List<int> listOfNumbers)
+		{
+			int length = listOfNumbers.Count;
+			int pivot = listOfNumbers[length - 1];
+			for (int i = 0; i < length; i++)
+			{
+				if (listOfNumbers[i] > pivot)
+				{
+
+				}
+			}
+
+			return listOfNumbers;
+		}
+
+		#endregion
 	}
 }
