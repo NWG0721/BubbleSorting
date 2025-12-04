@@ -76,6 +76,12 @@ namespace BubbleSorting.Con
 
 		public List<int> QuickSort(List<int> listOfNumbers)
 		{
+			/*
+			 
+			You Should Lean that how does the quick sorting algorithm work. Than, you should make it just work (not really efficient).
+			 
+			 */
+
 			int length = listOfNumbers.Count;
 			int pivot = listOfNumbers[length - 1];
 			for (int i = 0; i < length; i++)
